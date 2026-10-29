@@ -1,0 +1,60 @@
+{
+  "name": "dsh-breather",
+  "version": "0.3.2",
+  "description": "Pause a running turn between steps. Resume sends no new request and repeats no tokens; only a click or a new message resumes. Timer freezes, pause excluded.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "screenshots.json",
+    "pause-control.png",
+    "notes.png"
+  ],
+  "scripts": {
+    "test": "node test.mjs && node test-apply.mjs && node test-client.mjs",
+    "smoke": "node tools/browser-rig.mjs",
+    "smoke:live": "node tools/browser-smoke.mjs",
+    "check:release": "node tools/check-release.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "pause",
+    "session",
+    "agent",
+    "web-ui"
+  ],
+  "author": "zrrrrrrr77",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zrrrrrrr77/dsh-breather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zrrrrrrr77/dsh-breather/issues"
+  },
+  "homepage": "https://github.com/zrrrrrrr77/dsh-breather#readme"
+}

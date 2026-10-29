@@ -1,0 +1,11 @@
+# dsh-breather 的配置层（bundle patch）
+#
+# 用户 `dsh plugin add dsh-breather` 时，这一层会被追加到 profile 的 bundles 之后，
+# 于是宿主半作为一个普通插件行被注册。浏览器半不在这里：`package.json` 的
+# `dsh.client.platform` 已经声明了它，Web 端会自己加载。
+#
+# 行 id 用包名，避免与别的插件撞车；config 全部走默认值，需要时由用户在自己的
+# profile patch 里覆盖这一行（注意：覆盖会替换整个 config，没写的键会回到默认）。
+- insert:
+    - id: dsh-breather
+      name: dsh-breather
